@@ -7,7 +7,7 @@ gem 'pg'                   # postgres
 gem 'sass-rails', '~> 5.0' # scss stylesheets
 gem 'bootstrap-sass'       # twitter bootstrap
 gem 'uglifier', '>= 1.3.0' # JavaScript compressor
-# gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'         # jquery
 gem 'turbolinks'           # https://github.com/rails/turbolinks
 gem 'jbuilder', '~> 2.0'   # https://github.com/rails/jbuilder
@@ -22,4 +22,5 @@ group :development, :test do
   gem 'byebug'             # debugger console
   gem 'web-console', '~> 2.0' # use <%= console %> in views
   gem 'spring'             # https://github.com/rails/spring
+  gem 'factory_girl_rails' # test data factories
 end
