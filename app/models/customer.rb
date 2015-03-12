@@ -5,7 +5,7 @@ class Customer < ActiveRecord::Base
   validates :name, presence: true
   validates :email, presence: true
   validates :email, uniqueness: true
-  validates :adddress, presence: true
+  validates :address, presence: true
   validates :city, presence: true
   validates :country, presence: true
   validates :credit_card, presence: true
