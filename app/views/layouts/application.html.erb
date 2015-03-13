@@ -6,11 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="icon" href="../../favicon.ico">
+        <link rel="icon" href="/favicon.ico">
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-        <script src="//js.pusher.com/2.2/pusher.min.js"></script>
         <%= csrf_meta_tags %>
 
         <title>Flaming Moe</title>
@@ -37,6 +35,9 @@
             </footer>
 
         </div> <!-- /container -->
+
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <script src="//js.pusher.com/2.2/pusher.min.js"></script>
 
     </body>
 </html>

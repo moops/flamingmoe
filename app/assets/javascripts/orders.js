@@ -19,6 +19,7 @@ $(function() {
 
         tr.hide();
         $('#recent-orders tbody').prepend(tr);
+        tr.fadeIn('slow');
     });
 
     channel.bind('count', function(data) {
@@ -40,8 +41,6 @@ $(function() {
         productId = $('#order_product_id').val();
         quantity = $('#order_quantity').val();
         unitPrice = prices[productId];
-        // console.log(prices);
-        // console.log('productId', productId, 'quantity', quantity, 'unitPrice', unitPrice);
         $('#order-price').val('$' + (quantity * unitPrice).toFixed(2));
     };
 });
