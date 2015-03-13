@@ -17,7 +17,6 @@ $(function() {
         'from ' + data.location + ' bought ' + data.quantity + ' ' + data.product +
         '</td></tr>');
 
-        tr.hide();
         $('#recent-orders tbody').prepend(tr);
         tr.fadeIn('slow');
     });

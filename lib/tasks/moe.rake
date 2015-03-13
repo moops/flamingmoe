@@ -28,7 +28,8 @@ namespace :moe do
     num = args[:num].to_i if args[:num]
     for i in 1..num do
       order = build_order
-      sleep(5)
+      # slow this down a little so we can see it update the ui in real time
+      sleep(3)
     end
   end
 
