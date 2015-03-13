@@ -6,6 +6,7 @@ $(function() {
 
     var pusher = new Pusher('54b6ac37e18c5fb6ce23');
     var channel = pusher.subscribe('flamingmoe');
+    channel.bind('sale', function(data) {
         console.log('got data from pusher:', data);
     });
 });

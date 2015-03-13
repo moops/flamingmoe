@@ -3,6 +3,8 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
+    # most recent orders for the scrolling feed
+    @orders = Order.last(6).reverse
 
     # the order needs a blank customer for the new order form
     @customer = Customer.new
