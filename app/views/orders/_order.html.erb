@@ -2,7 +2,7 @@
     <td>
         <p class="text-muted"><%= time_ago_in_words(order.created_at) %> ago</p>
         <strong class="text-primary"><%= order.customer.name %></strong>
-        from <%= order.customer.city %>
+        from <%= order.customer.city %><br>
         bought <%= pluralize(order.quantity, order.product.name) %>
     </td>
 </tr>

@@ -23,4 +23,5 @@ group :development, :test do
   gem 'web-console', '~> 2.0' # use <%= console %> in views
   gem 'spring'             # https://github.com/rails/spring
   gem 'factory_girl_rails' # test data factories
+  gem 'faker'              # fake data for the rake task (rake moe:sale)
 end

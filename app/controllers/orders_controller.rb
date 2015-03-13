@@ -10,6 +10,10 @@ class OrdersController < ApplicationController
     @customer = Customer.new
     @order = @customer.orders.build
 
+    # counts
+    @order_count = Order.all.count
+    @shipped_count = Order.where(shipped: true).count
+
     # product prices for the javascript display of the current order price
     @prices = Product.get_prices
   end

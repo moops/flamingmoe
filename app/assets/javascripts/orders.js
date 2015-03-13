@@ -13,13 +13,20 @@ $(function() {
 
         var tr = $('<tr><td>' +
         '<p class="text-muted">' + data.sold_at + '</p>' +
-        '<strong class="text-primary">' + data.name + '</strong> ' +
+        '<strong class="text-primary">' + data.name + '</strong><br> ' +
         'from ' + data.city + ' bought ' + data.quantity + ' ' + data.product +
         '</td></tr>');
 
         tr.hide();
         $('#recent-orders tbody').prepend(tr);
         tr.fadeIn('slow');
+    });
+
+    channel.bind('count', function(data) {
+        console.log('got count data from pusher:', data);
+        
+        $('#order-count').html(data.total);
+        $('#shipped-count').html(data.shipped);
     });
 
     $('#order_quantity').on('change', function() {

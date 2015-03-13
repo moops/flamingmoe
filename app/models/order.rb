@@ -34,16 +34,4 @@ class Order < ActiveRecord::Base
     logger.debug("pushed count details to pusher.com: #{details.inspect}")
   end
 
-  def push_summary
-    {
-        name: self.customer.name,
-        city: self.customer.city,
-        quantity: self.quantity,
-        product: self.product.name,
-        sold_at: self.created_at.strftime('%l:%M %p %A'),
-        orders: Order.count,
-        shipped: Order.where(shipped: true).count
-    }.inspect
-  end
-
 end
