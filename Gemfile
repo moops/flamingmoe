@@ -11,7 +11,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'         # jquery
 gem 'turbolinks'           # https://github.com/rails/turbolinks
 gem 'jbuilder', '~> 2.0'   # https://github.com/rails/jbuilder
-gem 'bcrypt', '~> 3.1.7'   # has_secure_password
 gem 'pusher'               # real time event publis/subscribe. http://pusher.com
 
 group :doc do

@@ -1,5 +1,12 @@
 class ProductsController < ApplicationController
+  before_filter :authenticate
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      USERS.has_key?(username) && USERS[username] == password
+    end
+  end
 
   # GET /products
   # GET /products.json
