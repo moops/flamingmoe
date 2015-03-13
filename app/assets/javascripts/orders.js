@@ -7,7 +7,19 @@ $(function() {
     var pusher = new Pusher('54b6ac37e18c5fb6ce23');
     var channel = pusher.subscribe('flamingmoe');
     channel.bind('sale', function(data) {
-        console.log('got data from pusher:', data);
+        console.log('got sale data from pusher:', data);
+
+        $('#recent-orders tr:gt(6)').remove();
+
+        var tr = $('<tr><td>' +
+        '<p class="text-muted">' + data.sold_at + '</p>' +
+        '<strong class="text-primary">' + data.name + '</strong> ' +
+        'from ' + data.city + ' bought ' + data.quantity + ' ' + data.product +
+        '</td></tr>');
+
+        tr.hide();
+        $('#recent-orders tbody').prepend(tr);
+        tr.fadeIn('slow');
     });
 
     $('#order_quantity').on('change', function() {

@@ -12,8 +12,8 @@ class Order < ActiveRecord::Base
   def push_sale
 
     details = {
-      customer_name: self.customer.name,
-      customer_city: self.customer.city,
+      name: self.customer.name,
+      city: self.customer.city,
       quantity: self.quantity,
       product: self.product.name,
       sold_at: self.created_at.strftime('%l:%M %p %A')
@@ -36,8 +36,8 @@ class Order < ActiveRecord::Base
 
   def push_summary
     {
-        customer_name: self.customer.name,
-        customer_city: self.customer.city,
+        name: self.customer.name,
+        city: self.customer.city,
         quantity: self.quantity,
         product: self.product.name,
         sold_at: self.created_at.strftime('%l:%M %p %A'),
