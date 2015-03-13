@@ -11,9 +11,11 @@ class OrdersControllerTest < ActionController::TestCase
 
   test "should create order" do
     assert_difference('Order.count') do
+      product = create(:product)
+
       xhr :post, :create, order: {
         quantity: 2,
-        product_id: 1,
+        product_id: product.id,
         customer_attributes: {
           name: 'homer',
           email: 'homer@example.com',

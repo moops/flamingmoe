@@ -13,7 +13,7 @@ class Order < ActiveRecord::Base
 
     details = {
       name: self.customer.name,
-      city: self.customer.city,
+      location: self.location,
       quantity: self.quantity,
       product: self.product.name,
       sold_at: self.created_at.strftime('%l:%M %p %A')
@@ -32,6 +32,10 @@ class Order < ActiveRecord::Base
     }
     Pusher['flamingmoe'].trigger('count', details)
     logger.debug("pushed count details to pusher.com: #{details.inspect}")
+  end
+
+  def location
+    "#{self.customer.city}, #{self.customer.country}"
   end
 
 end

@@ -40,7 +40,7 @@ class OrdersController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
-        format.js
+        format.js { render :create }
       end
     end
   end

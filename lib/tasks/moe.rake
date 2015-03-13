@@ -26,10 +26,8 @@ namespace :moe do
   task :sale, [:num] => :environment do |t, args|
     num = 1
     num = args[:num].to_i if args[:num]
-    puts num
     for i in 1..num do
       order = build_order
-      puts order.inspect
       sleep(5)
     end
   end
@@ -44,7 +42,9 @@ namespace :moe do
       credit_card: Faker::Business.credit_card_number,
       expiry: Faker::Business.credit_card_expiry_date.strftime('%m%Y')
     )
+
     product = Product.where(id: rand(1..4)).take
+    
     order = Order.create(
       customer: customer,
       product: product,
