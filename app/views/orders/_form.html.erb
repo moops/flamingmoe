@@ -20,7 +20,14 @@
     <div class="form-group">
         <%= f.label :product, class: 'col-sm-3 control-label' %>
         <div class="col-sm-9">
-            <%= f.collection_select(:product_id, Product.all, :id, :name, {}, {class: 'form-input'}) %>
+            <%= f.collection_select(:product_id, Product.all, :id, :name_with_price, {}, {class: 'form-input'}) %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Price</label>
+        <div class="col-sm-9">
+            <%= text_field_tag nil, nil, class: 'form-input', disabled: 'disabled', id: 'order-price' %>
         </div>
     </div>
 
@@ -71,7 +78,7 @@
 
     <div class="form-group">
         <div class="col-sm-12">
-            <%= f.submit class: 'btn btn-success' %>
+            <%= f.submit value: 'go for moe', class: 'btn btn-success' %>
             <input type="reset" value="I'm not worthy" class="btn btn-warning">
         </div>
     </div>

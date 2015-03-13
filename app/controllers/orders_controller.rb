@@ -9,6 +9,8 @@ class OrdersController < ApplicationController
     # the order needs a blank customer for the new order form
     @customer = Customer.new
     @order = @customer.orders.build
+    @prices = Product.get_prices
+    logger.debug(@prices)
   end
 
   # POST /orders
